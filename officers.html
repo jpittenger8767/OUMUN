@@ -30,9 +30,9 @@
     <a href="about.html">About Us</a>
     <a href="social.html">Social Media</a>
     <a href="contact.html">Contact</a>
-    <form class="search" role="search" action="#">
+    <form class="search" role="search" action="search.html" method="get">
       <label for="q" class="sr-only">Search</label>
-      <input id="q" type="search" placeholder="Search">
+      <input id="q" name="q" type="search" placeholder="Search">
       <button type="submit" aria-label="Submit search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg>
       </button>
@@ -46,7 +46,7 @@
   <a href="join.html">Join Us</a>
 </nav>
 
-<main>
+<main data-pagefind-body>
   <section class="page-hero">
     <img class="page-hero-img" src="images/team.jpg" alt="">
     <h1>Executive Team</h1>
