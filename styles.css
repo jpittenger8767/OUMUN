@@ -69,8 +69,6 @@ a:hover { color: var(--crimson); }
 .button:hover { background: #6a1112; }
 .contact-info h3 { margin: 0 0 4px; }
 .contact-info p { margin: 0 0 24px; color: #4a4343; }
-.site-footer { padding: 32px 8%; background: var(--gray); text-align: center; font-size: 15px; }
-.site-footer p { margin: 0; }
 @media (max-width: 700px) { .contact-layout { grid-template-columns: 1fr; } }
 
 /* Home: intro extras and conferences */
@@ -112,3 +110,29 @@ h1, h2, h3 { font-family: var(--font-display); }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Slow zoom on hero photos */
+@keyframes slow-zoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+.hero-img, .page-hero-img { animation: slow-zoom 18s ease-out forwards; }
+@media (prefers-reduced-motion: reduce) { .hero-img, .page-hero-img { animation: none; } }
+
+/* About: text beside photo */
+.split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; margin-bottom: 56px; }
+.split .lead { margin: 0; }
+.split figure { margin: 0; }
+.split img { display: block; width: 100%; height: 340px; object-fit: cover; background: #d8d3ce; box-shadow: 12px 12px 0 var(--blue-light); }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Footer */
+.site-footer { margin-top: 0; padding: 64px 8% 28px; background: #2b1416; color: #e9dcdc; font-size: 15px; line-height: 1.6; }
+.site-footer a { color: #e9dcdc; }
+.site-footer a:hover { color: var(--blue-light); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; max-width: 1100px; margin: 0 auto; }
+.footer-grid h3 { margin: 0 0 16px; color: #fff; font-size: 20px; }
+.footer-grid ul { margin: 0; padding: 0; list-style: none; }
+.footer-grid li { margin-bottom: 8px; }
+.footer-brand p { margin: 16px 0 0; max-width: 320px; }
+.footer-logo { display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; padding: 6px; border-radius: 50%; background: var(--crimson); }
+.footer-logo img { width: 100%; height: 100%; object-fit: contain; }
+.footer-bottom { max-width: 1100px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.18); font-size: 14px; color: #bda9a9; }
+@media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
