@@ -16,3 +16,16 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 targets.forEach(el => observer.observe(el));
+
+const menuToggle = document.querySelector('.menu-toggle');
+if (menuToggle) {
+  const setMenu = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  menuToggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  document.querySelectorAll('.main-nav a, .sub-nav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
+}
