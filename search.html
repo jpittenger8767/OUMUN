@@ -26,7 +26,10 @@
 <body>
 <header class="site-header">
   <a class="logo" href="index.html"><img src="images/logo.png" alt="OU Model UN home"></a>
-  <nav class="main-nav" aria-label="Main">
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+    <span class="bars" aria-hidden="true"></span>
+  </button>
+  <nav class="main-nav" id="site-menu" aria-label="Main">
     <a class="home" href="index.html" aria-label="Home">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 2 12h3v9h5v-6h4v6h5v-9h3z"/></svg>
     </a>
