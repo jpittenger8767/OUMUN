@@ -2,7 +2,7 @@
 document.documentElement.classList.add('js');
 
 const targets = document.querySelectorAll(
-  '.intro, .content > :not(.card-grid), .conferences h2, .conf-card, .card'
+  '.intro, .content > :not(.card-grid), .conferences h2, .conf-card, .card, .band-inner'
 );
 targets.forEach(el => el.classList.add('reveal'));
 
