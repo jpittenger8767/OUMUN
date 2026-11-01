@@ -1,4 +1,3 @@
-/* Color palette and fonts */
 :root {
   --crimson: #841617;
   --ink: #1f1a1a;
@@ -11,20 +10,17 @@
   --pagefind-ui-font: "Montserrat", Arial, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
 }
-/* Reset and base styles */
 * { box-sizing: border-box; }
 body { margin: 0; font-family: "Montserrat", Arial, sans-serif; color: var(--ink); background: #fff; }
 a { color: var(--ink); text-decoration: none; }
 a:hover { color: var(--crimson); }
 .sr-only { position: absolute; left: -9999px; }
 
-/* Header and navigation */
 .site-header {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 16px; padding: 20px 8%;
   max-width: 1440px; margin: 0 auto;
 }
-/* Logo and nav */
 .logo {
   display: flex; align-items: center; justify-content: center;
   width: 104px; height: 104px; padding: 8px; border-radius: 50%;
@@ -43,7 +39,6 @@ a:hover { color: var(--crimson); }
 .sub-nav a:hover { background: #e3dfdb; }
 .sub-nav .active { border-bottom: 4px solid var(--crimson); }
 
-/* Hero section */
 .hero {
   position: relative; height: 560px; display: flex; align-items: center;
   background: #3b1a1c; overflow: hidden;
@@ -67,7 +62,6 @@ a:hover { color: var(--crimson); }
 .card { padding: 28px; background: var(--gray); border-top: 4px solid var(--blue); }
 .card h3 { margin: 0 0 12px; font-size: 20px; }
 .card p { margin: 0; line-height: 1.6; color: #4a4343; }
-.officer img { display: block; width: 120px; height: 120px; margin-bottom: 16px; border-radius: 50%; object-fit: cover; background: #d8d3ce; }
 .contact-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; }
 .contact-info h3 { margin: 0 0 4px; }
 .contact-info p { margin: 0 0 24px; color: #4a4343; }
@@ -86,7 +80,6 @@ a:hover { color: var(--crimson); }
 .conf-body { padding: 28px 32px 36px; }
 .conf-body h3 { margin: 0 0 16px; font-size: 30px; font-weight: 700; }
 .conf-body p { margin: 0 0 8px; font-size: 18px; color: #4a4343; }
-
 /* Typography: serif display headings, Montserrat for everything else */
 h1, h2, h3 { font-family: var(--font-display); }
 .hero h1 { font-weight: 700; }
@@ -243,3 +236,19 @@ h1, h2, h3 { font-family: var(--font-display); }
 .country-list:empty { display: none; }
 .map-svg { aspect-ratio: 960 / 500; }
 .map-note { padding-top: 40px; color: #4a4343; }
+
+/* Executive team cards: photo with a bio that appears on hover, tap, or keyboard focus */
+.officer { position: relative; padding: 0; overflow: hidden; background: #fff; border: 1px solid var(--gray); border-top: 4px solid var(--blue); }
+.officer-photo { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #d8d3ce; }
+.officer-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.officer .bio {
+  position: absolute; inset: 0; display: flex; align-items: center; margin: 0; padding: 24px;
+  background: rgba(132, 22, 23, 0.94); color: #fff; font-size: 15px; line-height: 1.6;
+  opacity: 0; transform: translateY(12px); transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.officer h3 { margin: 20px 24px 4px; font-size: 22px; }
+.officer .role { margin: 0 24px 24px; font-weight: 600; color: var(--blue); }
+@media (hover: hover) { .officer:hover .bio { opacity: 1; transform: none; } }
+.officer:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 2px; }
+.officer:focus-visible .bio, .officer.open .bio { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .officer .bio { transition: none; transform: none; } }
