@@ -17,6 +17,7 @@ const observer = new IntersectionObserver((entries) => {
 
 targets.forEach(el => observer.observe(el));
 
+// Hamburger menu toggle. The menu is always visible on wide screens, so this only applies to narrow screens.
 const menuToggle = document.querySelector('.menu-toggle');
 if (menuToggle) {
   const setMenu = (open) => {
